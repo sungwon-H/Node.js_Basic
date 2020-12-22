@@ -41,3 +41,54 @@
         - add3: 함수의 본문이 return만 있는 경우 return 생략한다.
         - add4 : return이 생략된 함수의 본문을 소괄호로 감싸줄 수 있다.
         - not1과 not2도 같은 기능을 한다(매개변수 하나일 때 괄호 생략 가능하다.)
+
+
+---
+
+</br>
+
+- 예제.2
+
+    ```jsx
+    const relationship1 ={
+        name:'won',
+        friends: ['jin','woo','soo'],
+        logFriends: function(){
+            const that = this; // this는 realtionship1을 가리킨다
+            this.friends.forEach(function (friend){ // realtionship1의 객체 안에 friends배열을 순차적으로 실행
+                console.log(that.name, friend);
+                /*
+                won jin
+                won woo
+                won soo
+                */ 
+            });
+        }
+    }
+    relationship1.logFriends();
+    ```
+
+    - logFriends 메서드의 this 값에 주목
+    - forEach의 function의 this와 logFriends의 this는 다름
+    - that이라는 중간 변수를 이용해서 logFriends의 this를 전달한다.
+- 위 코드를 화살표 함수로 변경 할 경우
+
+    ```jsx
+    const relationship2 = {
+        name: 'won',
+        friends:['jin','woo','soo'],
+        logFriends(){
+            this.friends.forEach(friend =>{
+                console.log(this.name, friend);
+            });
+        },
+    };
+
+    relationship2.logFriends();
+    ```
+
+    - forEach의 화살표함수의 this와 logFriends의 this가 같아졌다.
+    - 화살표 함수는 자신을 포함하는 함수의 this를 물려받았다.
+    - 물려받고 싶지 않을 때 :function(){}을 사용한다.
+
+---
