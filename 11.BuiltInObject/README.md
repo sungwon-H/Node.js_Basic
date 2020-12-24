@@ -7,14 +7,17 @@
 1. [Global](#global-객체)
 2. [console](#console-객체)
 3. [Timer](#타이머-메소드)
-4. [filename, dirname](#filename,-dirname-내장-객체)
-5. [module, exports](#module,-exports)
+4. [filename, dirname](#filename-dirname-내장-객체)
+5. [module, exports](#module-exports)
 6. [this](#this-내장-객체)
 7. [require](#require-내장-객체의-특성)
 8. [Process](#process-내장-객체)
-9. [process.env](#process.env)
-10. [process.nextTick(콜백)](#process.nexttick(콜백))
-11. [process.exit(코드)](#process.exit(코드))
+9. [process.env](#process-env)
+10. [process.nextTick(콜백)](#process-nexttick콜백)
+11. [process.exit(코드)](#process-exit코드)
+
+
+
 
 
 
@@ -175,9 +178,10 @@
 
 </br>
 
-### filename, dirname 내장 객체
+### filename과 dirname 내장 객체
 
-- 노드에서는 브라우저와 다르게 컴퓨터에 접근이 가능하다.
+
+- 노드에서는 브라우저와 다르게 컴퓨터에 접근이 가능하다. 
 - 파일들을 지우거나 생성할 수 있다.
 - path와 조합하여 많이 쓰인다.
 - __filename : 현재 파일 경로
@@ -196,7 +200,7 @@
 ---
 </br>
 
-### module, exports
+### module과 exports 내장 객체 
 
 - module.exports 외에도 exports로 모듈을 만들 수 있다.
 - 동일하게 동작하는 이유는 module.exports와 exports가 참조 관계이기 때문이다.
@@ -392,7 +396,7 @@
 ---
 </br>
 
-### process.env
+### process env
 
 - 시스템 환경 변수들이 들어있는 객체
     - 비밀키(데이터베이스 비밀번호, 서드파티앱 키 등)를 보관하는 용도로 쓰인다.
@@ -414,7 +418,7 @@
 </br>
 
 
-### process.nextTick(콜백)
+### process nextTick(콜백)
 
 - 이벤트 루프가 다른 콜백 함수들보다 nextTick의 콜백 함수를 우선적으로 처리한다.
     - 너무 남용하면 다른 콜백 함수들 실행이 늦어질 수 있다.
@@ -446,7 +450,7 @@
 ---
 </br>
 
-### process.exit(코드)
+### process exit(코드)
 
 - 현재의 프로세스를 멈춘다.
     - 코드가 없거나 0이면 정상 종료
